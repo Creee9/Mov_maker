@@ -1,7 +1,6 @@
 import os
 import subprocess
 
-
 FOLDER_PATH = "C:\\Путь\\до\\материалов"
 
 
