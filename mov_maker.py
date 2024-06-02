@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-FOLDER_PATH = "C:\\Путь\\до\\материалов"
+FOLDER_PATH = "Путь_до_материалов"
 
 
 def find_jpg_files(directory: str) -> list[str]:
