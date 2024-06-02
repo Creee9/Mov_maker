@@ -65,7 +65,10 @@ def create_a_mov_files():
         separator = filename[sep_index]  # 5
         sequence_name = filename[:sep_index]
         frame_number = filename[sep_index + 1:]
-        path_name = os.path.join(os.path.dirname(jpg_file), sequence_name)
+        path_with_seq_name = os.path.join(
+            os.path.dirname(jpg_file),
+            sequence_name
+        )
         output_file = os.path.join(
             create_a_folder(FOLDER_PATH),
             f"{sequence_name}.mov"
@@ -73,7 +76,7 @@ def create_a_mov_files():
 
         cmd = (
             f'ffmpeg -framerate 24 -start_number {frame_number} '
-            f'-i "{path_name}{separator}%{len(frame_number)}d.jpg"'
+            f'-i "{path_with_seq_name}{separator}%{len(frame_number)}d.jpg"'
             f' -c:v mjpeg -b:v 25M "{output_file}"'  # 6
         )
         if not os.path.exists(output_file):
