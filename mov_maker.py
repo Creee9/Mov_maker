@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-FOLDER_PATH = "C:\\Путь\\до\\материалов"
+FOLDER_PATH = "Путь_до_материалов"
 
 
 def find_jpg_files(directory: str) -> list[str]:
@@ -49,6 +49,7 @@ def create_a_mov_files():
     """
 
     jpg_files = find_jpg_files(FOLDER_PATH)  # 1
+    jpg_files.sort()
 
     for jpg_file in jpg_files:
         filename = os.path.splitext(os.path.basename(jpg_file))[0]  # 2
